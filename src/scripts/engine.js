@@ -11,8 +11,8 @@ const playTune = (key) => {
     audio.volume = volume ? volume : 0.5;
     audio.play();
 
-    const clickedKey = document.querySelector(`[data-key='${key.toUpperCase()}']`)
-    clickedKey.classList.add("active");
+    const clickedKey = document.querySelector(`[data-key='${key.toLowerCase()}']`)
+    clickedKey.classList.add("active".to);
     setTimeout(() => {
         clickedKey.classList.remove("active");
     }, 700);
