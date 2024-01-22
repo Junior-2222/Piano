@@ -20,7 +20,7 @@ const playTune = (key) => {
 
 pianoKeys.forEach((keyEl) => {
 
-    keyEl.addEventListener("pointerover", (e) => {
+    keyEl.addEventListener("pointerdown", (e) => {
         playTune(e.currentTarget.dataset.key)
     })
     keyEl.addEventListener("pointerup", (e) => {
