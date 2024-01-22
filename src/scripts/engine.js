@@ -7,11 +7,11 @@ var volume;
 
 const playTune = (key) => {
     let audio = new Audio("src/tunes/a.mp3");
-    audio.src = `src/tunes/${key}.mp3`;
+    audio.src = `src/tunes/${key.toUpperCase()}.mp3`;
     audio.volume = volume ? volume : 0.5;
     audio.play();
 
-    const clickedKey = document.querySelector(`[data-key='${key}']`)
+    const clickedKey = document.querySelector(`[data-key='${key.toUpperCase()}']`)
     clickedKey.classList.add("active");
     setTimeout(() => {
         clickedKey.classList.remove("active");
@@ -20,11 +20,11 @@ const playTune = (key) => {
 
 pianoKeys.forEach((keyEl) => {
 
-    keyEl.addEventListener("pointerover", (e) => {
+    keyEl.addEventListener("pointerdown", (e) => {
         playTune(e.currentTarget.dataset.key)
     })
     keyEl.addEventListener("pointerup", (e) => {
-        document.querySelector(`[data-key='${e.currentTarget.dataset.key}']`).classList.remove("active");
+        document.querySelector(`[data-key='${e.currentTarget.dataset.key.toLocaleLowerCase()}']`).classList.remove("active");
     })
     mapedKeys.push(keyEl.dataset.key);
 })
