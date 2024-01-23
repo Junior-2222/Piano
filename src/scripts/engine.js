@@ -24,7 +24,7 @@ pianoKeys.forEach((keyEl) => {
         playTune(e.currentTarget.dataset.key)
     })
     keyEl.addEventListener("pointerup", (e) => {
-        document.querySelector(`[data-key='${e.currentTarget.dataset.key.toLocaleLowerCase()}']`).classList.remove("active");
+        document.querySelector(`[data-key='${e.currentTarget.dataset.key.toLowerCase()}']`).classList.remove("active");
     })
     mapedKeys.push(keyEl.dataset.key);
 })
