@@ -12,7 +12,7 @@ const playTune = (key) => {
     audio.play();
 
     const clickedKey = document.querySelector(`[data-key='${key.toLowerCase()}']`)
-    clickedKey.classList.add("active".to);
+    clickedKey.classList.add("active");
     setTimeout(() => {
         clickedKey.classList.remove("active");
     }, 700);
