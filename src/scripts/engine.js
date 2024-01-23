@@ -12,7 +12,7 @@ const playTune = (key) => {
     audio.play();
 
     const clickedKey = document.querySelector(`[data-key='${key.toLowerCase()}']`)
-    clickedKey.classList.add("active".to);
+    clickedKey.classList.add("active");
     setTimeout(() => {
         clickedKey.classList.remove("active");
     }, 700);
@@ -24,7 +24,7 @@ pianoKeys.forEach((keyEl) => {
         playTune(e.currentTarget.dataset.key)
     })
     keyEl.addEventListener("pointerup", (e) => {
-        document.querySelector(`[data-key='${e.currentTarget.dataset.key.toLocaleLowerCase()}']`).classList.remove("active");
+        document.querySelector(`[data-key='${e.currentTarget.dataset.key.toLowerCase()}']`).classList.remove("active");
     })
     mapedKeys.push(keyEl.dataset.key);
 })
